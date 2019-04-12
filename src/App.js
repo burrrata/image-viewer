@@ -12,17 +12,12 @@ class App extends Component {
 		}
 	}
 
-
-
-
 	// render the images
   render() {
     return (
       <div className='app'>
-				<div className='main-image'>
-					<img src={this.state.images[0]} />
-				</div>
-      </div>
+				<img src={this.state.images[0]} />
+    	</div>
     );
   }
 }
