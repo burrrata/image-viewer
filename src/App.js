@@ -1,28 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+// The main React component
 class App extends Component {
+
+	// init the state
+	constructor(props) {
+		super(props)
+		this.state = {
+			images: [`https://apod.nasa.gov/apod/image/1904/JMD_Rosette_Rotated.jpg`]
+		}
+	}
+
+
+
+
+	// render the images
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className='app'>
+				<div className='main-image'>
+					<img src={this.state.images[0]} />
+				</div>
       </div>
     );
   }
 }
 
+// export the app
 export default App;
