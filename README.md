@@ -7,8 +7,12 @@ A web app that allows users to submit a list of URLs that point to images, and t
 
 ### File Upload
 An interface is created to allow the user to upload a list of items.
+
 The inface might look something like this:
 - https://ipfs.pics/
+
+I think the easiest way to do this would be to make the initial background picture sem-transparent with an "Upload URL List" button on top
+Then, on load the latest randomly chosen image takes over the screen
 
 ### txt2array 
 The text file is formatted into a URLArray with every new line as an item
