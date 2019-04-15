@@ -23,3 +23,13 @@ A React component is created with a state that holds an array and an output that
 - The URLArray is added to the React component state. 
 - The component displays a new URL from this.state.URLs[Math.floor(Math.random()*this.state.URLs.length)]
 
+
+
+# Notes
+
+Ummm ? I assumed that React would be the best for this since you get state, client side execution, and modular components. That being said... you *could* probably do this all in Python... 
+- downloads a list or URLs
+- picks a starting image and a target image
+- displays the autoencoder's representation of the starting image
+- morphs towards the target image
+- once it's close to the target image it downloads a new target image and repeats the process 
