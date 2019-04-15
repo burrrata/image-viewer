@@ -1,20 +1,9 @@
-import React, {useCallback, useState, useEffect, Component} from 'react'
-import Dropzone, {useDropzone} from 'react-dropzone'
+import React, {useCallback, useState, useEffect} from 'react'
+import {useDropzone} from 'react-dropzone'
 import './App.css'
 
-// testing the random rotation
-const APODURLs = [
-'https://apod.nasa.gov/apod/image/1904/SaturnMoon_Schmitz_960.jpg',
-'https://apod.nasa.gov/apod/image/1904/AzurePlumesNorway_Sutie_960.jpg',
-'https://apod.nasa.gov/apod/image/1904/scorpio_guisard_960.jpg',
-'https://apod.nasa.gov/apod/image/1904/ISS4panelMar28Addis1024.jpg',
-'https://apod.nasa.gov/apod/image/1904/STScI-H-1912b-panstarrs1024.jpg',
-'https://apod.nasa.gov/apod/image/1904/potw1913aM2_1024.jpg',
-'https://apod.nasa.gov/apod/image/1904/HorseheadFlame_Zauner_960.jpg',
-'https://apod.nasa.gov/apod/image/1904/IssMoon_Holland_960.jpg']
-
-
-// This manages the state for the App
+// The image viewing app
+// - note: written with React hooks so will not work with classes
 function App() {
 	
 	// init the state
@@ -22,7 +11,8 @@ function App() {
 	const [currentURL, setCurrentURL] = useState('https://apod.nasa.gov/apod/image/1904/M87bh_EHT_2629.jpg')
 	const [dropzoneView, setDropzoneView] = useState('over')
 	
-	// parse the uploaded files and use setURLs to add them to the state
+	// dropzone component for the user to upload a text file with a unique URL on every line
+	// each URL needs to be a direct link to an image
 	function FileDropzone() {
 		// process files when they are dropped
 		const onDrop = useCallback(acceptedFiles => {
@@ -41,7 +31,7 @@ function App() {
 			acceptedFiles.forEach(file => reader.readAsBinaryString(file))
 		}, [])
 		// not sure what this does
-		const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+		const {getRootProps, getInputProps} = useDropzone({onDrop})
 		// return the dropzone component
 		return (
 			<div {...getRootProps()} className={dropzoneView}>
@@ -53,7 +43,7 @@ function App() {
 		)
 	}
 
-	// Image display component
+	// image display component
 	function Image() {
 		return(
 			<img src={currentURL} className='under' alt='' />
@@ -67,12 +57,8 @@ function App() {
 				setDropzoneView('hidden')
 				const newURL = URLs[Math.floor(Math.random()*URLs.length)]
 				setCurrentURL(newURL)
-				// Check the state for testing
-				//console.log(URLs)
-				//console.log(`URLs length: ${URLs.length}`)
-				//console.log(currentURL)
 			}
-		}, 3000)
+		}, 5000)
 		return function cleanup() {
 			clearInterval(interval)	
 		}
