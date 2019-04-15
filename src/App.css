@@ -35,6 +35,23 @@ img {
 	object-fit: cover;
 }
 
+.under {
+  position: relative;
+  z-index: 1;
+}
+
+.over {
+  position: absolute;
+  /* because the .over element is absolute, it is out of the flow of the app 
+     this means we have to manually set the left and right alignment */
+  left: 9%;
+  right: 9%;
+  z-index: 2;
+  opacity: 0.3;
+	color: white;
+}
+
+
 .app-header {
   text-align: center;
   padding: 5%;
