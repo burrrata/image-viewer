@@ -3,11 +3,12 @@ Global App Params
 ****************/
 
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box; /* box sizes include padding and margins */
 }
 
+/*
 .app {
   position: relative;
 	display: flex;
@@ -22,10 +23,9 @@ Global App Params
 	height: 100%;
 	overflow:hidden;
 }
+*/
 
-/* eventually figure out how to make this fit the screen rather than overflowing
- * it's good enough for now though
- */
+/*
 img {
 	display: block;
 	width: 100%;
@@ -34,40 +34,49 @@ img {
 	background-size: 100%;
 	object-fit: cover;
 }
+*/
+
+.img-box {
+	display: grid;
+	height: 100%;
+}
+
+.center-fit {
+	max-width: 100vw;
+	max-height: 100vh;
+	margin: auto;
+}
+
+.dropzone-text {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 10vmin;
+}
+
 
 .under {
-  position: relative;
   z-index: 1;
 }
 
 .over {
+	opacity: 0.3;
+	color: white;
+}
+
+/*
+.over {
   position: absolute;
-  /* because the .over element is absolute, it is out of the flow of the app 
-     this means we have to manually set the left and right alignment */
   left: 9%;
   right: 9%;
   z-index: 2;
   opacity: 0.3;
 	color: white;
 }
+*/
 
 .hidden {
+	position: relative;
 	opacity: 0;
 	z-index: -1;
 }
-
-.app-header {
-  text-align: center;
-  padding: 5%;
-}
-.app-header-div {
-  padding: 3%;
-}
-
-.app-body {
-  padding: 5%;
-}
-.app-body-div {
-  padding: 3%;
-}
-

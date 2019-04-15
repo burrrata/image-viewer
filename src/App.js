@@ -34,11 +34,13 @@ function App() {
 		const {getRootProps, getInputProps} = useDropzone({onDrop})
 		// return the dropzone component
 		return (
-			<div {...getRootProps()} className={dropzoneView}>
-				<input {...getInputProps()} />
-				<p>
-					Click to upload a text file.
-				</p>	
+			<div className={dropzoneView} >
+				<div {...getRootProps()} >
+					<input {...getInputProps()} />
+					<p className='dropzone-text'>
+						Click to upload a text file.
+					</p>	
+				</div>
 			</div>
 		)
 	}
@@ -46,7 +48,9 @@ function App() {
 	// image display component
 	function Image() {
 		return(
-			<img src={currentURL} className='under' alt='' />
+			<div className='img-box'>
+				<img src={currentURL} className='under center-fit' alt='' />
+			</div>
 		)
 	}
 
@@ -67,8 +71,8 @@ function App() {
 	// return the app components
 	return (
 		<div className='app'>
-			<FileDropzone />
 			<Image />
+			<FileDropzone />
 		</div>
 	)
 }
