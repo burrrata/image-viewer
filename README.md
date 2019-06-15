@@ -1,4 +1,8 @@
-# Image Viewer
+<h1 align='center'>
+  <a href='https://www.burrrata.ch/image-viewer/'>
+    React Image Viewer
+  </a>
+</h1>
 
 A web app that allows users to submit a list of URLs that point to images, and then view a slideshow randomly displaying a URL from that list.
 
@@ -8,4 +12,3 @@ The text file:
 - the app will split URLs on the whitespace inbetween each line
 
 APOD_IMAGE_URLS.txt is an example of how the text file needs to be formated. Try downloading it, then going to to image viewer, and uploading it to see what happens.
-- https://www.burrrata.ch/image-viewer/
