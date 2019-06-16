@@ -4,7 +4,7 @@
   </a>
 </h1>
 
-A web app that allows users to submit a list of URLs that point to images, and then view a slideshow randomly displaying a URL from that list.
+A web app that allows users to submit a text file with a list of image URLs and then view a slideshow that randomly displays images from that list.
 
 The text file:
 - the file needs to end in .txt
